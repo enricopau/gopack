@@ -51,7 +51,6 @@ var rootCmd = &cobra.Command{
 		var filter archive.FileFilter
 		if filterRegex != "" {
 			r, err := regexp.Compile(filterRegex)
-
 			if err != nil {
 				fmt.Printf("Invalid filter regex: %s", err.Error())
 				os.Exit(1)
