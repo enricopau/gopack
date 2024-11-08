@@ -34,6 +34,9 @@ var rootCmd = &cobra.Command{
 		if len(args) >= 2 {
 			dir = args[1]
 		}
+		if dir == "" {
+			dir = "."
+		}
 		modPath, err := modfile.GetModuleNameFromModfile(dir)
 		if err != nil {
 			fmt.Printf("Unable to determine module path: %s", err.Error())
